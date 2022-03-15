@@ -8,16 +8,18 @@ class Buffer:
 		if len(self.currentlist) < 5:
 			return self.currentlist
 		else:
-			suma = []
-			for i in range(5):
-				elem = self.currentlist.pop(0)
-				suma.append(elem)
-			return sum(suma)
+			while len(self.currentlist) >= 5:
+				suma = []
+				for i in range(5):
+					suma.append(self.currentlist.pop(0))
+				return sum(suma)
 		# добавить следующую часть последовательности
 
 	def get_current_part(self):
-		pass 
+		print(self.currentlist)
+
 a = Buffer()
-a.add(1,2,3,4,5,6)
+a.add(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
+a.get_current_part()
 print(a.currentlist)
 
